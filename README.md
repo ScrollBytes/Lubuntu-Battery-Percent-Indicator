@@ -13,13 +13,19 @@ This script requires the python module **[psutil](https://github.com/giampaolo/p
 ### ⭐ How to make the icon show correctly
 It seems the lxqt-panel will only show icons from your current icon theme's folder located in "/usr/share/icons". Directly linking to an icon outside of this folder did not work.
 
-The **icons.zip** file in this project contains a 24x24 png image file for the numbers 1 to 100. 
+![Screenshot2](/before-after.png)
+
+The **icons.zip** file in this project contains a 24x24 svg image file for the numbers 1 to 100. 
 
 **You must extract these images into your current icon theme's folder (inside the 24x24 directory).**
 
 I use the *Numix Circle* icon theme. I used this command to open the file manager in root mode then pasted my icons inside.
 
     sudo pcmanfm-qt /usr/share/icons/Numix-Circle/24/panel
+
+After moving the icons to that folder - reload the icon cache
+
+    sudo update-icon-caches /usr/share/icons/*
 
 Now lxqt-panel should see the icons and show them correctly.
 
@@ -29,6 +35,10 @@ Now lxqt-panel should see the icons and show them correctly.
 Make the script executable
 
     chmod +x /path/to/script/battery-percent-indicator.py
+    
+Test it in your terminal
+
+    /path/to/script/battery-percent-indicator.py
     
 Make it run on startup (Lubuntu 20.04)
 1. Start Menu -> Preferences -> LXQt settings -> Session Settings
